@@ -1,10 +1,34 @@
 package com.solution.string_array;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class AnagramsString {
 
+	public static boolean isAnagram(String a,String b) {
+		if(a.length()!=b.length()) return false;
+		
+		Map<Character,Integer> map = new HashMap<>();
+
+		for(int i=0;i<a.length(); i++) {
+			char ac = a.charAt(i);
+			char bc = b.charAt(i);
+			
+			//add here
+			map.put(ac, map.getOrDefault(ac,0)+1);
+			
+			//subtract here
+			map.put(bc, map.getOrDefault(bc,0)-1);
+		}
+		
+		for(int count :map.values()) {
+			if(count!=0) return false;
+		}
+		
+		return true;
+	}
+	
 	public static boolean isAnagrams(String str, String str1) {
 	    // If lengths are different, they cannot be anagrams
 	    if (str.length() != str1.length()) {
@@ -29,8 +53,8 @@ public class AnagramsString {
 	}
 	
 	public static void main(String[] args) {
-		boolean anagrams = isAnagrams("listen","silent");
-		System.out.println("are these strings anagram : " + (anagrams ? "YES":"NO"));
+		boolean anagrams = isAnagram("nilw","link");
+		System.out.println(anagrams);
 	}
 
 }

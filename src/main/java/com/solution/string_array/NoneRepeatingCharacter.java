@@ -1,4 +1,6 @@
-package com.solution.string_array;public class NoneRepeatingCharacter {
+package com.solution.string_array;
+
+public class NoneRepeatingCharacter {
 
 	public static Character firstNoneRepeate(String str) {
 		int[] arr = new int[256];
@@ -13,6 +15,7 @@ package com.solution.string_array;public class NoneRepeatingCharacter {
 				return ch;
 			}
 		}
+		System.out.println("there is not any unique character founded!");
 		return null;
 	}
 	
@@ -47,8 +50,9 @@ package com.solution.string_array;public class NoneRepeatingCharacter {
 	}
 	
 	public static void main(String[] args) {
-//		Character ch = firstNoneRepeate("sazzad");
-		Character ch = secondNonRepeate("aazzalmk");
-		System.out.println(ch==null?"there is not any unique character":ch);
+		Character ch = firstNoneRepeate("aaaa");
+		System.out.println(ch);
+//		Character ch = secondNonRepeate("aazzalmk");
+//		System.out.println(ch==null?"there is not any unique character":ch);
 	}
 }

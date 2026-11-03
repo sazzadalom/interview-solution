@@ -3,7 +3,8 @@ package com.solution.string_array;
 public class FindMissingNum {
 
 	public static void main(String[] args) {
-		int[] arr = {1,2,3,5,6,8,10};
+//		int[] arr = {1,2,3,5,6,8,10};
+		int[] arr = {1,2,4,6,7,9};
 		findMisingNu(arr);
 	}
 

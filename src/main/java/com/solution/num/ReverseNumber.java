@@ -11,9 +11,18 @@ public class ReverseNumber {
 
 		return num1;
 	}
+	
+	
+	static long reverse(int num) throws NumberFormatException {
+		boolean isNegative = Math.abs(num) < 0 ? true : false;
+		String numx = String.valueOf(Math.abs(num));
+		StringBuffer sb = new StringBuffer(numx);
+		long int1 = Long.parseLong(sb.reverse().toString());
+		return isNegative ? Math.negateExact(int1) : int1;
+	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException{
 
-		System.out.println(reverseNum(-123));
+		System.out.println(reverse(1056389759));
 	}
 }
